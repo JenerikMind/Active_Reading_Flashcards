@@ -1,0 +1,32 @@
+.container-center{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container h2{
+    margin-top: 15px;
+}
+
+.form-element{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0 15px 0;
+}
+
+.form-element label{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.form-element textarea{
+    height: 100px;
+}
+
+.form-container button{
+    margin-right: 10px;
+}
+
+.justify-right{
+    margin-left: auto;
+}

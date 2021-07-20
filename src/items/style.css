@@ -1,0 +1,60 @@
+
+.card-display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-btns{
+    display: flex;
+    width: 100%;
+}
+
+.card-left-btns{
+    display: flex;
+    justify-content: space-evenly;
+    width: clamp(115px, 25%, 150px);
+}
+
+.delete{
+    margin-left: auto;
+}
+
+.deck{
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.deck p{
+    font-weight: 500;
+}
+
+.history-nav{
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px 0 10px 15px;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-list-text-container{
+    display: flex;
+}
+
+.card-list-text-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card-list-text{
+    flex: 1;
+    width: 45%;
+    margin: 0 2px 4px 2px;
+}
+

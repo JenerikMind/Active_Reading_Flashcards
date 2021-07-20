@@ -1,0 +1,62 @@
+{
+  "decks": [
+    {
+      "name": "Rendering in React",
+      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manip. ",
+      "id": 1
+    },
+    {
+      "name": "React Router",
+      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
+      "id": 2
+    },
+    {
+      "name": "Deck Name",
+      "description": "Brief description of the deck",
+      "id": 3
+    }
+  ],
+  "cards": [
+    {
+      "id": 1
+    },
+    {
+      "front": "How do you modify the state of a different React component?",
+      "back": "Not at all! State is visible to the component only.",
+      "id": 2
+    },
+    {
+      "front": "How do you pass data 'down' to a React child component?",
+      "back": "As properties or props",
+      "id": 3
+    },
+    {
+      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
+      "back": "All paths. A route with no path matches all URL's",
+      "deckId": 2,
+      "id": 4
+    },
+    {
+      "front": "What does <Switch> do?",
+      "back": "Renders the first matching child <Route> ",
+      "deckId": 2,
+      "id": 5
+    },
+    {
+      "front": "Front side of card",
+      "back": "Back side of cars",
+      "id": 8
+    },
+    {
+      "front": "Front side of card",
+      "back": "Back side of card",
+      "id": 10
+    },
+    {
+      "front": "Front side of card",
+      "back": "Back side of card",
+      "deckId": 2,
+      "id": 11
+    }
+  ]
+}
