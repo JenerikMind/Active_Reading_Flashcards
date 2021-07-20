@@ -16,7 +16,7 @@ function Cards({deckId}){
         "front": "Loading Cards",
         "back": "Patience is not your virtue, is it?",
     }
-    const [card, setCard] = useState();
+    const [card, setCard] = useState(defaultCard);
     const [cards, setCards] = useState([]);
     const [index, setIndex] = useState(0);
 
@@ -34,7 +34,6 @@ function Cards({deckId}){
 
     // set the default card to the first one in the array
     useEffect(() => {
-        setCard(defaultCard);
         if (cards.length !== 0) setCard(cards[0]);
     }, [cards]);
 

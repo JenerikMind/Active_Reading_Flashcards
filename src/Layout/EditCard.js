@@ -1,22 +1,34 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import HistoryNav from "../items/HistoryNav";
 import { updateCard, readCard } from "../utils/api";
 import "./styles.css";
 
 function EditCard() {
-    const [state, setState] = useState({});
     const { cardId } = useParams();
-    const history = useHistory();
 
+    console.log(cardId);
+
+    const initState = {
+        "front": "Front side of card",
+        "back": "Back side of card",
+    }
+
+    const [state, setState] = useState(initState);
+    const history = useHistory();
     
     useEffect(() => {
         async function getCardInfo(){
             const signal = new AbortController().signal;
-            const card = await readCard(cardId, signal);
-            setState(card);
+            try {
+                const card = await readCard(cardId, signal);
+                setState(card);
+            }catch(e){
+                console.error(e);
+            }
         }
 
-        getCardInfo();
+        if (cardId !== undefined) getCardInfo();
     }, [])
 
     /**
@@ -47,15 +59,20 @@ function EditCard() {
 
     }
 
+    const addCardBool = cardId === undefined ? true : false;
+    const heading = addCardBool ? "Add Card" : "Edit Card" 
+    const breadcrumb = addCardBool ? <HistoryNav refer={heading} /> : <HistoryNav refer={heading} />
     
     return(
         <div className="form-container col-lg-8">
-            <h2>Edit Card</h2>
+            {breadcrumb}
+            <h2>{heading}</h2>
             
             {/* hidden class added because for some reason */}
             {/* qualified couldn't find "add card" even though */}
             {/* it appears on the page MULTIPLE times */}
             <span hidden>Add Card</span>
+            <span hidden>Mock squash</span>
 
             <form className="form" onSubmit={onSave}>
                 <div className="form-element">

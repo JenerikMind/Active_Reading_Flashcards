@@ -65,7 +65,7 @@ function ViewDeck(){
                 <button className="btn btn-primary mx-2">Study</button>
                 
                 <Link to={`${url}/cards/new`}>
-                    <button className="btn btn-primary">Add Cards</button>
+                    <button className="btn btn-primary">Add Card</button>
                 </Link>
 
                 <button className="btn btn-danger justify-right">Delete</button>

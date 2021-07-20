@@ -6,7 +6,12 @@ import { updateDeck, readDeck } from "../utils/api";
 function EditDeck(){
     const history = useHistory();
     const {deckId} = useParams();
-    const [state, setState] = useState({});
+
+    const initState = {
+        "name": "The name of the deck",
+        "description": "The description of the deck",
+    };
+    const [state, setState] = useState(initState);
 
     useEffect(() => {
         async function loadDeckInfo(){

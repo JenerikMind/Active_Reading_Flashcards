@@ -22,9 +22,12 @@ function Decks({history}){
                     <EditDeck />
                 </Route>
 
-                <Route path={`${url}/:deckId/cards/:cardId`}>
-                    <HistoryNav refer="Edit Card"/>
-                    <EditCard history={history}/>
+                <Route exact path={`${url}/:deckId/cards/new`}>
+                    <EditCard />
+                </Route>
+
+                <Route exact path={`${url}/:deckId/cards/:cardId/edit`}>
+                    <EditCard />
                 </Route>
 
                 <Route path={`${url}/:deckId`}>
