@@ -1,7 +1,7 @@
 import "./style.css";
 import {Link} from "react-router-dom";
 
-function Deck({deck, cards}){
+function Deck({deck, cards, del}){
     return (
         <div className="card-display">
             <div className="deck col-lg-8">
@@ -21,7 +21,7 @@ function Deck({deck, cards}){
                             <button className="study btn btn-success">Study</button>
                         </Link>
                     </div>
-                    <button className="delete btn btn-danger">Delete</button>
+                    <button className="delete btn btn-danger" onClick={() => del(deck.id)}>Delete</button>
                 </div>
             </div>
         </div>

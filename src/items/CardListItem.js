@@ -12,7 +12,7 @@ function CardListItem({card, del}){
                     <div className="card-list-text">{card.back}</div>
                 </div>
                 <div className="card-btns">
-                    <Link to={`${url}/cards/${card.id}`}>
+                    <Link to={`${url}/cards/${card.id}/edit`}>
                         <button className="btn btn-secondary ml-auto">Edit</button>
                     </Link>
                     <button className="btn btn-danger ml-1" onClick={() => del(card.id)}>Delete</button>

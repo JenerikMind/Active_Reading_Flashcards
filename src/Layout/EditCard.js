@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import HistoryNav from "../items/HistoryNav";
-import { updateCard, readCard } from "../utils/api";
+import { updateCard, readCard, createCard } from "../utils/api";
 import "./styles.css";
 
 function EditCard() {
-    const { cardId } = useParams();
+    const { cardId, deckId } = useParams();
 
     console.log(cardId);
 
@@ -48,14 +48,26 @@ function EditCard() {
     function onSave(){
         const card = state;
 
-        try{
-            const signal = new AbortController().signal;
-            updateCard(card, signal);
-            history.push("/");
-        }catch(e){
-            console.error(e);
-            alert("There was an error processing your request.");
+        if (heading === "Edit Card"){
+            try{
+                const signal = new AbortController().signal;
+                updateCard(card, signal);
+                history.push("/");
+            }catch(e){
+                console.error(e);
+                alert("There was an error processing your request.");
+            }
+        }else{
+            try{
+                const signal = new AbortController().signal;
+                createCard(deckId, card, signal);
+                history.push("/");
+            }catch(e){
+                console.error(e);
+                alert("There was an error processing your request.");
+            }
         }
+
 
     }
 
